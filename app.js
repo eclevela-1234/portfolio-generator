@@ -1,27 +1,15 @@
-// const animalArray = ['dog', 'cat', 'pig'];
+const profileDataArgs = process.argv.slice(2);
 
-// animalArray.push('cow');
+const printProfileData = profileDataArr => {
+  // This...
+  for (let i = 0; i < profileDataArr.length; i += 1) {
+    console.log(profileDataArr[i]);
+  }
 
-// const personObj = {
-//     name: 'Eliot',
-//     age: 36
-// };
+  console.log('================');
 
-// personObj.age = 37;
-// personObj.occupation = "Developer"
-
-var profileDataArgs = process.argv.slice(2, process.argv.length);
-console.log(profileDataArgs);
-
-const printProfileData = (profileDataArr) => {
-    for (let i=0; i <profileDataArr.length; i++) {
-        console.log(profileDataArr[i]);
-    }
-
-    console.log("==========================");
-
-    profileDataArr.forEach(profileItem => console.log(profileItem));
+  // Is the same as this...
+  profileDataArr.forEach(profileItem => console.log(profileItem));
 };
 
 printProfileData(profileDataArgs);
-
