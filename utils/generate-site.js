@@ -10,7 +10,6 @@ const writeFile = (fileContent) => {
         return;
       }
       // if everything went well, resolve the promise and send the successful data to the .then method
-
       resolve({
         ok: true,
         message: "File created!",
@@ -18,3 +17,20 @@ const writeFile = (fileContent) => {
     });
   });
 };
+
+const copyFile = () => {
+  return new Promise((resolve, reject) => {
+    fs.copyFile("./src/style.css", "./dist/style.css", (err) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve({
+        ok: true,
+        message: "Stylesheet copy successful!",
+      });
+    });
+  });
+};
+
+module.exports = { writeFile, copyFile };
